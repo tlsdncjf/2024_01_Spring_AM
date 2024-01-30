@@ -46,5 +46,5 @@ public interface MemberRepository {
 
 	@Select("SELECT COUNT(*)  FROM `member` WHERE loginId = #{loginId} AND loginPw = #{loginPw}")
 	public int LoginId(String loginId, String loginPw);
-	
+
 }

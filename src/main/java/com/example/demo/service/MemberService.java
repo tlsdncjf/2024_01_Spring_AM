@@ -16,13 +16,13 @@ public class MemberService {
 	}
 
 	public int Join(String loginId, String loginPw, String name, String nickname, String cellphoneNum, String email) {
-		
+
 		Member existsMember = getMemberByLoginId(loginId);
 
 		if (existsMember != null) {
 			return -1;
 		}
-		
+
 		existsMember = getMemberByNameAndEmail(name, email);
 
 		if (existsMember != null) {
@@ -32,7 +32,7 @@ public class MemberService {
 		return memberRepository.getLastInsertId();
 
 	}
-	
+
 	private Member getMemberByNameAndEmail(String name, String email) {
 		return memberRepository.getMemberByNameAndEmail(name, email);
 	}
