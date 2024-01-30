@@ -4,6 +4,10 @@ import java.lang.reflect.Array;
 import java.util.Map;
 
 public class Ut {
+	
+	public static Object f(String format, Object... args) {
+		return String.format(format, args);
+	}
 
 	public static boolean isNullOrEmpty(String str) {
 		return str == null || str.trim().length() == 0;
