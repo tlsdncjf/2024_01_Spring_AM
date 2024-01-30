@@ -8,20 +8,22 @@ import com.example.demo.vo.Member;
 
 @Mapper
 public interface MemberRepository {
-	
+
 	@Select("""
 			SELECT *
 			FROM `member`
 			WHERE loginId = #{loginId}
 			""")
-	public Member getMemberByLoginId(String loginId);	
+	public Member getMemberByLoginId(String loginId);
+
 	@Select("""
 			SELECT *
 			FROM `member`
-			WHERE name = #{name} 
+			WHERE name = #{name}
 			AND email = #{email}
 			""")
 	public Member getMemberByNameAndEmail(String name, String email);
+
 	@Insert("""
 			INSERT INTO
 			`member` SET
@@ -42,6 +44,7 @@ public interface MemberRepository {
 	@Select("SELECT * FROM `member` WHERE id = #{id}")
 	public Member getMember(int id);
 
-	@Select("SELECT COUNT(*)  FROM `member` WHERE loginId = #{loginId}")
-	public int DupLoginId(String loginId);
+	@Select("SELECT COUNT(*)  FROM `member` WHERE loginId = #{loginId} AND loginPw = #{loginPw}")
+	public int LoginId(String loginId, String loginPw);
+	
 }
