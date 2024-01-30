@@ -21,8 +21,8 @@ title = '제목1',
 INSERT INTO article
 SET regDate = NOW(),
 updateDate = NOW(),
-title = '제목2',
-`body` = '내용2';
+title = '제목222',
+`body` = '내용222';
 
 INSERT INTO article
 SET regDate = NOW(),
