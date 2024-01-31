@@ -35,16 +35,12 @@ public interface MemberRepository {
 			nickname = #{nickname},
 			cellphoneNum = #{cellphoneNum},
 			email = #{email}
-			""")
+			""")	
 	public void join(String loginId, String loginPw, String name, String nickname, String cellphoneNum, String email);
-
+	
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
 
 	@Select("SELECT * FROM `member` WHERE id = #{id}")
 	public Member getMember(int id);
-
-	@Select("SELECT COUNT(*)  FROM `member` WHERE loginId = #{loginId} AND loginPw = #{loginPw}")
-	public int LoginId(String loginId, String loginPw);
-
 }
