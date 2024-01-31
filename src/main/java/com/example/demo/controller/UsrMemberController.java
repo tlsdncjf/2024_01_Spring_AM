@@ -17,7 +17,7 @@ public class UsrMemberController {
 
 	@Autowired
 	private MemberService memberService;
-	
+
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
 	public ResultData doLogout(HttpSession httpSession) {
@@ -36,7 +36,7 @@ public class UsrMemberController {
 
 		return ResultData.from("S-1", Ut.f("로그아웃 되었습니다"));
 	}
-	
+
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
 	public ResultData<Member> doLogin(HttpSession httpSession, String loginId, String loginPw) {
@@ -49,7 +49,7 @@ public class UsrMemberController {
 
 		if (isLogined) {
 			return ResultData.from("F-A", "이미 로그인 상태입니다");
-		} 
+		}
 
 		if (Ut.isNullOrEmpty(loginId)) {
 			return ResultData.from("F-1", "아이디를 입력해주세요");
@@ -70,8 +70,8 @@ public class UsrMemberController {
 
 		httpSession.setAttribute("loginedMemberId", member.getId());
 
-		return ResultData.from("S-1", Ut.f("%s님 환영합니다", member.getNickname()));		
-	}	
+		return ResultData.from("S-1", Ut.f("%s님 환영합니다", member.getNickname()));
+	}
 
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
@@ -86,6 +86,7 @@ public class UsrMemberController {
 		if (isLogined) {
 			return ResultData.from("F-A", "이미 로그인 상태입니다");
 		}
+
 		if (Ut.isNullOrEmpty(loginId)) {
 			return ResultData.from("F-1", "아이디를 입력해주세요");
 		}
@@ -113,6 +114,6 @@ public class UsrMemberController {
 
 		Member member = memberService.getMember(joinRd.getData1());
 
-		return ResultData.newData(joinRd, member);
+		return ResultData.newData(joinRd, "member", member);
 	}
 }
