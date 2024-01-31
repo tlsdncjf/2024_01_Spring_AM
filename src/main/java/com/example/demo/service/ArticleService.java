@@ -29,8 +29,9 @@ public class ArticleService {
 		return ResultData.from("S-1", Ut.f("%d번 글이 생성되었습니다", id), id);
 	}
 
-	public void deleteArticle(int id) {
+	public ResultData deleteArticle(int id) {
 		articleRepository.deleteArticle(id);
+		return ResultData.from("S-1", Ut.f("%d번 글이 삭제되었습니다", id), id);
 	}
 
 	public void modifyArticle(int id, String title, String body) {

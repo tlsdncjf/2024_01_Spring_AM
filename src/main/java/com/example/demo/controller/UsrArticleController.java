@@ -80,17 +80,13 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/doDelete")
 	@ResponseBody
-	public String doDelete(int id) {
+	public ResultData doDelete(int id) {
 
 		Article article = articleService.getArticle(id);
 
-		if (article == null) {
-			return id + "번 글은 존재하지 않습니다.";
-		}
-
 		articleService.deleteArticle(id);
-
-		return id + "번 글이 삭제 되었습니다";
+		
+		return ResultData.from("S-1", Ut.f("%d번 게시물이 삭제되었습니다.", id), article);
 	}
 
 }
