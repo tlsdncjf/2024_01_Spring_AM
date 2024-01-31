@@ -49,7 +49,7 @@ public class UsrMemberController {
 
 		if (isLogined) {
 			return ResultData.from("F-A", "이미 로그인 상태입니다");
-		}
+		} 
 
 		if (Ut.isNullOrEmpty(loginId)) {
 			return ResultData.from("F-1", "아이디를 입력해주세요");
