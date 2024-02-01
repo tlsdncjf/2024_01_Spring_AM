@@ -10,8 +10,8 @@
 		<div class="btns">
 			<button class="hover:underline" type="button" onclick="history.back();">뒤로가기</button>
 
-			<input>${member.loginId }">아이디</input>
-			<input>${member.loginPw }">비밀번호</input>
+			<input${member.loginId }>아이디</input>
+			<input${member.loginPw }>비밀번호</input>
 		
 		</div>
 		
