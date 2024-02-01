@@ -21,8 +21,10 @@
 
 	<select id="getArticle" resultType="Article">
 		SELECT *
-		FROM article
-		WHERE id = #{id}
+		FROM article AS a
+		INNER JOIN `member` m
+		ON a.memberId = m.id
+		WHERE a.id = #{id}
 	</select>
 
 
