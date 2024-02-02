@@ -6,16 +6,27 @@
 
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
-		<table class="table-box-1" border="1"></table>	
+		<form action="../member/doLogin" method="POST">
+			<table class="login-box table-box-1" border="1">
+				<tbody>
+					<tr>
+						<th>아이디</th>
+						<td><input autocomplete="off" type="text" placeholder="아이디를 입력해주세요" name="loginId" /></td>
+					</tr>
+					<tr>
+						<th>비밀번호</th>
+						<td><input autocomplete="off" type="text" placeholder="비밀번호를 입력해주세요" name="loginPw" /></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><input type="submit" value="로그인" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 		<div class="btns">
 			<button class="hover:underline" type="button" onclick="history.back();">뒤로가기</button>
-
-			<input${member.loginId }>아이디</input>
-			<input${member.loginPw }>비밀번호</input>
-		
 		</div>
-		
-		<div calss="btns">로그인</div>
 	</div>
 </section>
 
