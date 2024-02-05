@@ -2810,3 +2810,93 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:199)
 	... 24 common frames omitted
+2024-02-05 10:42:29 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rq in com.example.demo.controller.UsrArticleController required a bean of type 'com.example.demo.vo.Rq' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.vo.Rq' in your configuration.
+
+2024-02-05 10:42:43 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rq in com.example.demo.controller.UsrArticleController required a bean of type 'com.example.demo.vo.Rq' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.vo.Rq' in your configuration.
+
+2024-02-05 10:42:58 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rq in com.example.demo.controller.UsrArticleController required a bean of type 'com.example.demo.vo.Rq' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.vo.Rq' in your configuration.
+
+2024-02-05 10:43:12 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rq in com.example.demo.controller.UsrArticleController required a bean of type 'com.example.demo.vo.Rq' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.vo.Rq' in your configuration.
+
+2024-02-05 10:43:23 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rq in com.example.demo.controller.UsrArticleController required a bean of type 'com.example.demo.vo.Rq' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.vo.Rq' in your configuration.
+
