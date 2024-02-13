@@ -27,6 +27,7 @@ CREATE TABLE `member`(
     delDate DATETIME COMMENT '탈퇴 날짜'
 );
 
+
 # article TD 생성
 INSERT INTO article
 SET regDate = NOW(),
@@ -45,6 +46,12 @@ SET regDate = NOW(),
 updateDate = NOW(),
 title = '제목3',
 `body` = '내용3';
+
+INSERT INTO article
+SET regDate = NOW(),
+updateDate = NOW(),
+title = '제목4',
+`body` = '내용4';
 
 # member TD 생성
 # (관리자)
@@ -89,9 +96,80 @@ WHERE id IN (1,2);
 
 UPDATE article
 SET memberId = 3
+WHERE id IN (3,4);
+
+
+# board 테이블 생성
+CREATE TABLE board(
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    `code` CHAR(50) NOT NULL UNIQUE COMMENT 'notice(공지사항), free(자유), QnA(질의응답) ...',
+    `name` CHAR(20) NOT NULL UNIQUE COMMENT '게시판 이름',
+    delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '삭제 여부 (0=삭제 전, 1=삭제 후)',
+    delDate DATETIME COMMENT '삭제 날짜'
+);
+
+# board TD 생성
+INSERT INTO board
+SET regDate = NOW(),
+updateDate = NOW(),
+`code` = 'NOTICE',
+`name` = '공지사항';
+
+INSERT INTO board
+SET regDate = NOW(),
+updateDate = NOW(),
+`code` = 'FREE',
+`name` = '자유';
+
+INSERT INTO board
+SET regDate = NOW(),
+updateDate = NOW(),
+`code` = 'QnA',
+`name` = '질의응답';
+
+ALTER TABLE article ADD COLUMN boardId INT(10) UNSIGNED NOT NULL AFTER `memberId`;
+
+UPDATE article
+SET boardId = 1
+WHERE id IN (1,2);
+
+UPDATE article
+SET boardId = 2
 WHERE id = 3;
 
+UPDATE article
+SET boardId = 3
+WHERE id = 4;
+
+ALTER TABLE article ADD COLUMN hitCount INT(10) UNSIGNED NOT NULL DEFAULT 0 AFTER `body`;
+
 ###############################################
+
+INSERT INTO article
+(
+    regDate, updateDate, memberId, boardId, title, `body`
+)
+SELECT NOW(),NOW(), FLOOR(RAND() * 2) + 2, FLOOR(RAND() * 3) + 1, CONCAT('제목_',RAND()), CONCAT('내용_',RAND())
+FROM article;
+
+UPDATE article 
+SET title = '제목5'
+WHERE id = 5;
+
+UPDATE article 
+SET title = '제목11'
+WHERE id = 6;
+
+UPDATE article 
+SET title = '제목45'
+WHERE id = 7;
+
+SELECT FLOOR(RAND() * 2) + 2
+
+SELECT FLOOR(RAND() * 3) + 1
+
 
 SHOW FULL COLUMNS FROM `member`;
 DESC `member`;
@@ -102,4 +180,29 @@ FROM article;
 SELECT *
 FROM `member`;
 
+SELECT *
+FROM `board`;
+
 SELECT LAST_INSERT_ID();
+
+SELECT *
+FROM article AS A
+WHERE 1
+
+	AND boardId = 1
+
+			AND A.title LIKE CONCAT('%','0000','%')
+			OR A.body LIKE CONCAT('%','0000','%')
+
+ORDER BY id DESC
+
+SELECT COUNT(*)
+FROM article AS A
+WHERE 1
+
+	AND boardId = 1
+
+			AND A.title LIKE CONCAT('%','0000','%')
+			OR A.body LIKE CONCAT('%','0000','%')
+
+ORDER BY id DESC
