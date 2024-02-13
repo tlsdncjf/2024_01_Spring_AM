@@ -65,6 +65,12 @@
 			</c:forEach>
 		</div>
 	</div>
+	<div class="search_box">
+	
+		<c:if test="${searckeyword > 0 }">
+		
+		</c:if>
+	</div>
 </section>
 
 
