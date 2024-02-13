@@ -35,6 +35,7 @@
 			</tbody>
 		</table>
 	</div>
+	
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
 		<c:set var="paginationLen" value="3" />
@@ -64,12 +65,6 @@
 				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${param.boardId}">${i }</a>
 			</c:forEach>
 		</div>
-	</div>
-	<div class="search_box">
-	
-		<c:if test="${searckeyword > 0 }">
-		
-		</c:if>
 	</div>
 </section>
 
