@@ -120,6 +120,20 @@ public interface ArticleRepository {
 			WHERE id = #{id}
 			""")
 	public int getArticleHitCount(int id);
+	
+	@Update("""
+			UPDATE `like`
+			SET LikeCount = LikeCount + 1
+			WHERE id = #{id}
+			""")
+	public int increaseLikeCount(int id);
+	
+	@Select("""
+			SELECT LikeCount
+			FROM `like`
+			WHERE id = #{id}
+			""")
+	public int getArticleLikeCount(int id);
 
 	@Select("""
 			<script>
@@ -153,5 +167,5 @@ public interface ArticleRepository {
 			""")
 	public List<Article> getForPrintArticles(int boardId, int limitFrom, int limitTake, String searchKeywordTypeCode,
 			String searchKeyword);
-
 }
+	

@@ -65,6 +65,12 @@
 					<th>조회수</th>
 					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
 				</tr>
+				<tr>
+					<th>좋아요</th>
+						<div class="btns mt-5">
+							<button class="btn btn-outline" type="button">좋아요</button>
+						</div>
+				</tr>
 			</tbody>
 		</table>
 		<div class="btns mt-5">
