@@ -57,5 +57,5 @@ public class UsrReplyController {
 		return Ut.jsReplace(writeReplyRd.getResultCode(), writeReplyRd.getMsg(), "../article/detail?id=" + relId);
 
 	}
-
+	
 }
