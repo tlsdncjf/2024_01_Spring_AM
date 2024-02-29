@@ -3,7 +3,6 @@
 <c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto overflow-x-auto">
 		<div class="mb-4 flex">

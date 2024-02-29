@@ -3,7 +3,6 @@
 <c:set var="pageTitle" value="ARTICLE WRITE"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
 		<form action="../article/doWrite" method="POST">

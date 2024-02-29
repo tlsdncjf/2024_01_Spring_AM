@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE MODIFY"></c:set>
 <%@ include file="../common/head.jspf"%>
+ 
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
 		<form action="../article/doModify" method="POST">

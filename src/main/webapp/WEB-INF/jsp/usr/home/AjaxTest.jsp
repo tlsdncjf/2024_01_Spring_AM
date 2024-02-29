@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="AjaxTestPage"></c:set>
 
+<!-- <iframe src="http://localhost:8082/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
+
 <!doctype html>
 <html lang="en">
 <head>
